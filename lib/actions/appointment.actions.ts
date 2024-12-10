@@ -141,7 +141,7 @@ export const cancelAppointment = async ({
     if (!updatedAppointment) throw Error;
 
     // Send SMS notification to the user
-    const smsMessage = `Greetings from CarePulse. We regret to inform you that your appointment scheduled for ${schedule} with Dr. ${primaryPhysician} is cancelled. Reason: ${cancellationReason}.`;
+    const smsMessage = `Greetings from CarePulse. We regret to inform you that your appointment scheduled for ${schedule} with  ${primaryPhysician} is cancelled. Reason: ${cancellationReason}.`;
     await sendSMSNotification(userId, smsMessage);
 
     revalidatePath("/admin");
